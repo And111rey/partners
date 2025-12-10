@@ -29,12 +29,12 @@
             </div>
 
             <!-- Дополнительный текст под верхним рядом -->
-            <p style="margin: 20px 0 10px 0; font-size: clamp(20px, 2.8vw, 28px); line-height: clamp(1.2, 1.5vw, 1.5);">
+            <h2 style="margin: 20px 0 10px 0; font-size: clamp(22px, 3.2vw, 32px); line-height: clamp(1.2, 1.5vw, 1.5);">
                 Хочете віддалений бізнес без великих вкладень?
-            </p>
-            <p style="margin: 0; font-size: clamp(20px, 2.8vw, 28px); line-height: clamp(1.2, 1.5vw, 1.5);">
+            </h2>
+            <h2 style="margin: 0; font-size: clamp(22px, 3.2vw, 32px); line-height: clamp(1.2, 1.5vw, 1.5);">
                 Почніть продавати унікальні товари нашого виробництва на західні ринки - вже через 2 тижні!
-            </p>
+            </h2>
 
             <!-- Кнопка "ЗАРЕЄСТРУВАТИСЯ" под текстом -->
             <button class="subscribeBtn"
@@ -356,7 +356,7 @@
         <div
             style="display: flex; justify-content: center; gap: clamp(12px, 3vw, 20px); width: 100%; margin-top: clamp(10px, 2vw, 20px);">
             <!-- Фото 1 -->
-            <a href="" target="_blank"
+            <a href="https://www.youtube.com/channel/UCvHFZEfZ4lCTB4Y58-z7Aaw" target="_blank"
                 style="display: block; width: clamp(33px, 6vw, 66px); height: clamp(33px, 6vw, 66px); border-radius: 8px; overflow: hidden;">
                 <img src="./img/utub.png" alt="youtube" style="width: 100%; height: 100%; object-fit: cover;">
             </a>
@@ -391,8 +391,8 @@
         document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
             btn.addEventListener('click', function () {
                 // Здесь открываем форму SendPulse
-                // SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-                alert("test")
+                SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
+                // alert("test")
             });
         });
     </script>
@@ -425,13 +425,13 @@
         });
     </script> -->
 
-    <script src="//web.webformscr.com/apps/fc3/build/loader.js" async
+    <!-- <script src="//web.webformscr.com/apps/fc3/build/loader.js" async
         sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b">
-        </script>
+        </script> -->
 
 
 <!-- Подключение SendPulse (твой код) -->
-<script src="//web.webformscr.com/apps/fc3/build/loader.js" async sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script>
+<!-- <script src="//web.webformscr.com/apps/fc3/build/loader.js" async sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script> -->
 
 <!-- <script>
 document.addEventListener('DOMContentLoaded', function() {
