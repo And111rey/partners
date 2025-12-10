@@ -384,18 +384,18 @@
     <!-- <script>
         document.querySelectorAll('.subscribeBtn').addEventListener('click', function () {
             // SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-            alert("jkjkjk")
+            alert("TEST")
         });
     </script> -->
-    <!-- <script>
+    <script>
         document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
             btn.addEventListener('click', function () {
                 // Здесь открываем форму SendPulse
-                SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-                // alert("jkjkjk")
+                // SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
+                alert("test")
             });
         });
-    </script> -->
+    </script>
 
     <!-- <script src="//web.webformscr.com/apps/fc3/build/loader.js" async sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script>
 <script>
@@ -454,29 +454,27 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script> -->
 
-<script src="//web.webformscr.com/apps/fc3/build/loader.js" sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script>
+<!-- <script src="https://web.webformscr.com/apps/fc3/build/loader.js" sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script> -->
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Ждём, пока SPWebForms будет готов
-    function openSendPulseForm() {
+
+<!-- <script>
+    function waitForSP() {
         if (typeof SPWebForms !== 'undefined' && SPWebForms.openForm) {
+            console.log('SPWebForms готов');
             document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
                 btn.addEventListener('click', function () {
-                    // Просто открываем форму, не создавая контейнер вручную
+                    alert('Кнопка нажата');
                     SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
                 });
             });
         } else {
-            // Если SPWebForms ещё не загрузился, проверяем через 200ms
-            setTimeout(openSendPulseForm, 200);
-            alert("hrlll")
+            // Просто повторяем проверку, без alert
+            setTimeout(waitForSP, 200);
+
         }
     }
-    openSendPulseForm();
-});
-</script>
-
+    document.addEventListener('DOMContentLoaded', waitForSP);
+    </script> -->
 
 
 </body>
