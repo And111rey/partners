@@ -380,10 +380,7 @@
 
 
 
-    <script src="//web.webformscr.com/apps/fc3/build/loader.js" async
-        sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b">
-        </script>
-
+   
     <!-- <script>
         document.querySelectorAll('.subscribeBtn').addEventListener('click', function () {
             // SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
@@ -419,15 +416,39 @@
         });
     });
 </script> -->
-    <script>
+    <!-- <script>
         document.querySelectorAll('.subscribeBtn').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
 
             });
         });
-    </script>
+    </script> -->
 
+    <script src="//web.webformscr.com/apps/fc3/build/loader.js" async
+        sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b">
+        </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
+            btn.addEventListener('click', function () {
+                // Если форма уже есть, удаляем её
+                const existingForm = document.querySelector('#spWebFormContainer');
+                if (existingForm) existingForm.remove();
+    
+                // Создаём контейнер для формы
+                const formContainer = document.createElement('div');
+                formContainer.id = 'spWebFormContainer';
+                document.body.appendChild(formContainer);
+    
+                // Вызываем форму SendPulse
+                SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
+            });
+        });
+    });
+    </script>
 
 
 </body>
