@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Адаптивная секция</title>
+    <title>POD Partners</title>
 </head>
 
 <body
@@ -430,25 +430,30 @@
         </script>
 
 
+<!-- Подключение SendPulse (твой код) -->
+<script src="//web.webformscr.com/apps/fc3/build/loader.js" async sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
-            btn.addEventListener('click', function () {
-                // Если форма уже есть, удаляем её
-                const existingForm = document.querySelector('#spWebFormContainer');
-                if (existingForm) existingForm.remove();
-    
-                // Создаём контейнер для формы
-                const formContainer = document.createElement('div');
-                formContainer.id = 'spWebFormContainer';
-                document.body.appendChild(formContainer);
-    
-                // Вызываем форму SendPulse
-                SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-            });
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
+        btn.addEventListener('click', function () {
+            // Если контейнер формы уже есть, удаляем его
+            const existingForm = document.querySelector('#spWebFormContainer');
+            if (existingForm) existingForm.remove();
+
+            // Создаём новый контейнер для формы
+            const formContainer = document.createElement('div');
+            formContainer.id = 'spWebFormContainer';
+            document.body.appendChild(formContainer);
+
+            // Открываем форму SendPulse
+            SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
+            // alert("hdjhfjdh")
         });
     });
-    </script>
+});
+</script>
+
 
 
 </body>
