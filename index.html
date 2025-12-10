@@ -433,7 +433,7 @@
 <!-- Подключение SendPulse (твой код) -->
 <script src="//web.webformscr.com/apps/fc3/build/loader.js" async sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script>
 
-<script>
+<!-- <script>
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
         btn.addEventListener('click', function () {
@@ -451,6 +451,29 @@ document.addEventListener('DOMContentLoaded', function() {
             // alert("hdjhfjdh")
         });
     });
+});
+</script> -->
+
+<script src="//web.webformscr.com/apps/fc3/build/loader.js" sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Ждём, пока SPWebForms будет готов
+    function openSendPulseForm() {
+        if (typeof SPWebForms !== 'undefined' && SPWebForms.openForm) {
+            document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
+                btn.addEventListener('click', function () {
+                    // Просто открываем форму, не создавая контейнер вручную
+                    SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
+                });
+            });
+        } else {
+            // Если SPWebForms ещё не загрузился, проверяем через 200ms
+            setTimeout(openSendPulseForm, 200);
+            alert("hrlll")
+        }
+    }
+    openSendPulseForm();
 });
 </script>
 
