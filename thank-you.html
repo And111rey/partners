@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дякуємо!</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #1d1c1c;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .thank-you-container {
+        background: #2a2929;
+        padding: 40px 20px;
+        border-radius: 16px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        background: linear-gradient(90deg, #FFD700, #FFC107);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    p {
+        font-size: 1.1rem;
+        color: #FFD700;
+        margin-bottom: 30px;
+    }
+    .back-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background: linear-gradient(90deg, #FFD700, #FFC107);
+        color: #1d1c1c;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .back-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.7);
+    }
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+        .thank-you-container {
+            padding: 30px 15px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="thank-you-container">
+    <h1>Дякуємо за підписку!</h1>
+    <p>Ми зв'яжемося з вами найближчим часом.</p>
+    <a href="https://canadapartners.online" class="back-btn">Вернуться на сайт</a>
+</div>
+</body>
+</html>

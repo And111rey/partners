@@ -29,7 +29,8 @@
             </div>
 
             <!-- Дополнительный текст под верхним рядом -->
-            <h2 style="margin: 20px 0 10px 0; font-size: clamp(22px, 3.2vw, 32px); line-height: clamp(1.2, 1.5vw, 1.5);">
+            <h2
+                style="margin: 20px 0 10px 0; font-size: clamp(22px, 3.2vw, 32px); line-height: clamp(1.2, 1.5vw, 1.5);">
                 Хочете віддалений бізнес без великих вкладень?
             </h2>
             <h2 style="margin: 0; font-size: clamp(22px, 3.2vw, 32px); line-height: clamp(1.2, 1.5vw, 1.5);">
@@ -37,8 +38,7 @@
             </h2>
 
             <!-- Кнопка "ЗАРЕЄСТРУВАТИСЯ" под текстом -->
-            <button onclick="openFormModal()" class="subscribeBtn"
-    style="
+            <button onclick="openFormModal()" class="subscribeBtn" style="
         margin-top: 25px;
         padding: 16px 24px; /* увеличили внутренние отступы */
         font-size: clamp(14px, 2vw, 20px); /* увеличили размер текста */
@@ -51,8 +51,8 @@
         min-width: 160px; /* увеличили минимальную ширину */
         max-width: 240px; /* увеличили максимальную ширину */
     ">
-    ЗАРЕЄСТРУВАТИСЯ
-</button>
+                ЗАРЕЄСТРУВАТИСЯ
+            </button>
 
             <h2 style="margin-top: 15px; font-size: clamp(14px, 1.5vw, 20px); font-weight: normal; color: #ffffff;">
                 Онлайн-зустріч 15 грудня
@@ -107,8 +107,7 @@
             </ul>
 
             <!-- Кнопка -->
-            <button onclick="openFormModal()" class="subscribeBtn"
-    style="
+            <button onclick="openFormModal()" class="subscribeBtn" style="
         margin-top: 25px;
         padding: 16px 24px; /* увеличили внутренние отступы */
         font-size: clamp(14px, 2vw, 20px); /* увеличили размер текста */
@@ -121,8 +120,8 @@
         min-width: 160px; /* увеличили минимальную ширину */
         max-width: 240px; /* увеличили максимальную ширину */
     ">
-    ЗАРЕЄСТРУВАТИСЯ
-</button>
+                ЗАРЕЄСТРУВАТИСЯ
+            </button>
         </div>
 
         <!-- Правая колонка с изображением -->
@@ -168,8 +167,7 @@
             </ul>
 
             <!-- Кнопка -->
-            <button onclick="openFormModal()" class="subscribeBtn"
-    style="
+            <button onclick="openFormModal()" class="subscribeBtn" style="
         margin-top: 25px;
         padding: 16px 24px; /* увеличили внутренние отступы */
         font-size: clamp(14px, 2vw, 20px); /* увеличили размер текста */
@@ -182,8 +180,8 @@
         min-width: 160px; /* увеличили минимальную ширину */
         max-width: 240px; /* увеличили максимальную ширину */
     ">
-    ЗАРЕЄСТРУВАТИСЯ
-</button>
+                ЗАРЕЄСТРУВАТИСЯ
+            </button>
 
         </div>
 
@@ -232,8 +230,7 @@
 
 
             <!-- Кнопка -->
-            <button onclick="openFormModal()" class="subscribeBtn"
-    style="
+            <button onclick="openFormModal()" class="subscribeBtn" style="
         margin-top: 25px;
         padding: 16px 24px; /* увеличили внутренние отступы */
         font-size: clamp(14px, 2vw, 20px); /* увеличили размер текста */
@@ -246,8 +243,8 @@
         min-width: 160px; /* увеличили минимальную ширину */
         max-width: 240px; /* увеличили максимальную ширину */
     ">
-    ЗАРЕЄСТРУВАТИСЯ
-</button>
+                ЗАРЕЄСТРУВАТИСЯ
+            </button>
 
         </div>
 
@@ -352,10 +349,7 @@
             </div>
 
         </div>
-        <button 
-        onclick="openFormModal()"
-
-        class="subscribeBtn" style="
+        <button onclick="openFormModal()" class="subscribeBtn" style="
     padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 32px);
     font-size: clamp(16px, 2vw, 20px);
     font-weight: bold;
@@ -431,116 +425,8 @@
 
 
 
-   
-    <!-- <script>
-        document.querySelectorAll('.subscribeBtn').addEventListener('click', function () {
-            // SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-            alert("TEST")
-        });
-    </script> -->
-
-    <!-- <script src="//web.webformscr.com/apps/fc3/build/loader.js" sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script>
-    <script>
-        document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
-            btn.addEventListener('click', function () {
-                // Здесь открываем форму SendPulse
-                SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-                // alert("test")
-            });
-        });
-    </script> -->
-
-    <!-- <script src="//web.webformscr.com/apps/fc3/build/loader.js" async sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script>
-<script>
-    // Проверяем каждые 100ms, пока SPWebForms не станет доступен
-    function waitForSPWebForms(callback) {
-        if (window.SPWebForms) {
-            callback();
-        } else {
-            setTimeout(function() { waitForSPWebForms(callback); }, 100);
-        }
-    }
-
-    waitForSPWebForms(function() {
-        document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
-            btn.addEventListener('click', function () {
-                SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-            });
-        });
-    });
-</script> -->
-    <!-- <script>
-        document.querySelectorAll('.subscribeBtn').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-
-            });
-        });
-    </script> -->
-
-    <!-- <script src="//web.webformscr.com/apps/fc3/build/loader.js" async
-        sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b">
-        </script> -->
-
-
-<!-- Подключение SendPulse (твой код) -->
-<!-- <script src="//web.webformscr.com/apps/fc3/build/loader.js" async sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script> -->
-
-<!-- <script>
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
-        btn.addEventListener('click', function () {
-            // Если контейнер формы уже есть, удаляем его
-            const existingForm = document.querySelector('#spWebFormContainer');
-            if (existingForm) existingForm.remove();
-
-            // Создаём новый контейнер для формы
-            const formContainer = document.createElement('div');
-            formContainer.id = 'spWebFormContainer';
-            document.body.appendChild(formContainer);
-
-            // Открываем форму SendPulse
-            SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-            // alert("hdjhfjdh")
-        });
-    });
-});
-</script> -->
-
-<!-- <script src="https://web.webformscr.com/apps/fc3/build/loader.js" sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"></script> -->
-
-
-<!-- <script>
-    function waitForSP() {
-        if (typeof SPWebForms !== 'undefined' && SPWebForms.openForm) {
-            console.log('SPWebForms готов');
-            document.querySelectorAll('.subscribeBtn').forEach(function(btn) {
-                btn.addEventListener('click', function () {
-                    alert('Кнопка нажата');
-                    SPWebForms.openForm('6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-                });
-            });
-        } else {
-            // Просто повторяем проверку, без alert
-            setTimeout(waitForSP, 200);
-
-        }
-    }
-    document.addEventListener('DOMContentLoaded', waitForSP);
-    </script> -->
-
-
-    <!-- SendPulse Simple Subscription Form -->
-<!-- <form action='https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4OTU5ODYxLCJhZGRyZXNzX2Jvb2tfaWQiOjgyNzA1LCJsYW5nIjoicnUifQ==' method='post'>
-    <label>Имя</label>
-    <input type='text' name='name'>
-    <label>Email</label>
-    <input type='email' required name='email'>
-    <input type='hidden' name='sender' value='bWFuYWdlckBsaWdodGJveGZvcnlvdS5zaG9w'>
-    <button>Subscribe</button>
-</form> -->
-<!-- SendPulse Simple Subscription Form -->
-<div id="formModal" style="
+    <!-- Модальное окно с формой SendPulse -->
+    <div id="formModal" style="
     display:none;
     position:fixed;
     inset:0;
@@ -553,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
     opacity:0;
     transition: opacity 0.3s ease;
 ">
-    <div id="formModalContent" style="
+        <div id="formModalContent" style="
         background:#1d1c1c;
         width:100%;
         max-width:420px;
@@ -566,19 +452,21 @@ document.addEventListener('DOMContentLoaded', function() {
         color: #fff;
         font-family: Arial, sans-serif;
     ">
-        <h2 style="
+            <h2 style="
             margin-bottom: clamp(12px, 2vw, 20px);
             font-size: clamp(20px, 4vw, 26px);
             text-align: center;
         ">
-            Реєстрація на зустріч
-        </h2>
+                Реєстрація на зустріч
+            </h2>
 
-        <!-- Форма SendPulse -->
-        <form action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4OTU5ODYxLCJhZGRyZXNzX2Jvb2tfaWQiOjgyNzA1LCJsYW5nIjoicnUifQ==" method="post">
+            <!-- Форма SendPulse -->
+            <form id="sendpulseForm"
+                action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4OTU5ODYxLCJhZGRyZXNzX2Jvb2tfaWQiOjgyNzA1LCJsYW5nIjoicnUifQ=="
+                method="post">
 
-            <label style="display:block; margin-bottom:6px;">Ім’я</label>
-            <input type="text" name="name" style="
+                <label style="display:block; margin-bottom:6px;">Ім’я</label>
+                <input type="text" name="name" style="
                 width:100%;
                 margin-bottom:14px;
                 padding:10px;
@@ -590,8 +478,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 box-sizing:border-box;
             ">
 
-            <label style="display:block; margin-bottom:6px;">Email</label>
-            <input type="email" required name="email" style="
+                <label style="display:block; margin-bottom:6px;">Email</label>
+                <input type="email" required name="email" style="
                 width:100%;
                 margin-bottom:14px;
                 padding:10px;
@@ -603,9 +491,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 box-sizing:border-box;
             ">
 
-            <input type="hidden" name="sender" value="bWFuYWdlckBsaWdodGJveGZvcnlvdS5zaG9w">
+                <input type="hidden" name="sender" value="bWFuYWdlckBsaWdodGJveGZvcnlvdS5zaG9w">
 
-            <button type="submit" style="
+                <button type="submit" style="
                 width:100%;
                 padding:12px;
                 margin-top:10px;
@@ -616,9 +504,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 cursor:pointer;
                 font-size:16px;
             ">Підписатися</button>
-        </form>
+            </form>
 
-        <button onclick="closeFormModal()" style="
+            <button onclick="closeFormModal()" style="
             width:100%;
             margin-top:10px;
             background:#111;
@@ -629,32 +517,59 @@ document.addEventListener('DOMContentLoaded', function() {
             font-size:16px;
             cursor:pointer;
         ">Закрити</button>
+        </div>
     </div>
-</div>
 
-<script>
-function openFormModal() {
-    const modal = document.getElementById('formModal');
-    const content = document.getElementById('formModalContent');
+    <script>
+        function openFormModal() {
+            const modal = document.getElementById('formModal');
+            const content = document.getElementById('formModalContent');
 
-    modal.style.display = 'flex';
+            modal.style.display = 'flex';
 
-    setTimeout(() => {
-        modal.style.opacity = '1';
-        content.style.transform = 'scale(1)';
-    }, 10); 
-}
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                content.style.transform = 'scale(1)';
+            }, 10);
+        }
 
-function closeFormModal() {
-    const modal = document.getElementById('formModal');
-    const content = document.getElementById('formModalContent');
+        function closeFormModal() {
+            const modal = document.getElementById('formModal');
+            const content = document.getElementById('formModalContent');
 
-    modal.style.opacity = '0';
-    content.style.transform = 'scale(0.9)';
+            modal.style.opacity = '0';
+            content.style.transform = 'scale(0.9)';
 
-    setTimeout(() => modal.style.display = 'none', 300);
-}
-</script>
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        // ===== Обработчик формы SendPulse с редиректом =====
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('sendpulseForm');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault(); // Отменяем стандартную отправку
+
+                const xhr = new XMLHttpRequest();
+                xhr.open(form.method, form.action);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                const formData = new FormData(form);
+                const params = new URLSearchParams(formData).toString();
+
+                xhr.onload = function () {
+                    if (xhr.status === 200 || xhr.status === 201) {
+                        // Редирект на страницу "Спасибо"
+                        window.location.href = "https://canadapartners.online/thank-you.html";
+                    } else {
+                        alert('Щось пішло не так, спробуйте ще раз.');
+                    }
+                };
+
+                xhr.send(params);
+            });
+        });
+    </script>
 </body>
 
 </html>
