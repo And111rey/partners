@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Дякуємо!</title>
+
 <style>
     body {
         margin: 0;
@@ -18,45 +19,55 @@
         padding: 20px;
         box-sizing: border-box;
     }
+
     .thank-you-container {
         background: #2a2929;
-        padding: 40px 20px;
+        padding: 40px 25px;
         border-radius: 16px;
-        max-width: 500px;
+        max-width: 650px;
         width: 100%;
         box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        line-height: 1.6;
     }
-    h1 {
-        font-size: 2rem;
+
+    h2 {
+        font-size: 1.9rem;
         margin-bottom: 20px;
         background: linear-gradient(90deg, #FFD700, #FFC107);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-    p {
-        font-size: 1.1rem;
+
+    .full-text {
         color: #FFD700;
-        margin-bottom: 30px;
+        text-align: left;
+        margin-top: 20px;
+        font-size: 1.1rem;
+        white-space: pre-line;
     }
+
     .back-btn {
         display: inline-block;
-        padding: 12px 24px;
+        padding: 14px 28px;
         background: linear-gradient(90deg, #FFD700, #FFC107);
         color: #1d1c1c;
         font-weight: bold;
         text-decoration: none;
-        border-radius: 8px;
+        border-radius: 10px;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+        margin-top: 30px;
     }
+
     .back-btn:hover {
         transform: scale(1.05);
         box-shadow: 0 4px 15px rgba(255, 215, 0, 0.7);
     }
+
     @media (max-width: 480px) {
-        h1 {
-            font-size: 1.5rem;
+        h2 {
+            font-size: 1.6rem;
         }
-        p {
+        .full-text {
             font-size: 1rem;
         }
         .thank-you-container {
@@ -64,12 +75,28 @@
         }
     }
 </style>
+
 </head>
 <body>
+
 <div class="thank-you-container">
-    <h1>Дякуємо за підписку!</h1>
-    <p>Ми зв'яжемося з вами найближчим часом.</p>
+
+    <h2>Дякуємо! Залишився ще один крок!</h2>
+
+    <div class="full-text">
+Увага! Вам потрібно відкрити лист який ми відправили на Ваш email, та підтвердити бажання отримувати матеріали від нас!
+
+Крок 1 - Відкрийте Ваш email
+Крок 2 - Знайдіть лист від нас
+Крок 3 - у емайлі - клікніть за посиланням щоб підтвердити бажання отримати безкоштовний курс!
+
+Обовʼязково перевірте папку СПАМ якщо раптом емайл не прийшов у вхідні повідомлення. В такому випадку натисніть “Не спам” і підтвердіть свій емайл за посиланням у отриманому листі.
+
+До зустрічі!
+    </div>
+
     <a href="https://and111rey.github.io/partners/" class="back-btn">Вернуться на сайт</a>
 </div>
+
 </body>
 </html>
