@@ -11,68 +11,86 @@
     style="margin: 0; padding: 0; background-color: #212121; color: #ffffff; font-family: Arial, sans-serif; min-height: 100vh;">
 
     <!-- 1111111111 -->
-    <section style="display: flex; flex-wrap: wrap; width: 100%;">
+    <section style="display: flex; flex-wrap: wrap; width: 100%; justify-content: center;">
 
         <!-- Левая колонка с логотипом -->
         <div
-            style="flex: 1 1 50%; padding: 40px; box-sizing: border-box; min-width: 300px; display: flex; flex-direction: column; justify-content: flex-start;">
-
+            style="flex: 1 1 50%; 
+                   min-width: 300px; 
+                   max-width: 600px; 
+                   padding: 40px 20px; 
+                   box-sizing: border-box; 
+                   display: flex; 
+                   flex-direction: column; 
+                   justify-content: center;"> 
+    
             <!-- Верхний ряд: логотип и два ряда текста -->
             <div style="display: flex; align-items: center; margin-bottom: 12px;">
                 <img src="./img/logo.png" alt="Логотип"
-                    style="width: 6%; max-width: 30px; height: auto; margin-right: 6px;">
-                <div
-                    style="display: flex; flex-direction: column; justify-content: flex-start; line-height: 1; margin-top: -1px;">
+                     style="width: 6%; max-width: 30px; height: auto; margin-right: 6px;">
+                <div style="display: flex; flex-direction: column; line-height: 1; margin-top: -1px;">
                     <span style="font-size: 11px;">POD</span>
                     <span style="font-size: 11px;">Partners</span>
                 </div>
             </div>
-
-            <!-- Дополнительный текст под верхним рядом -->
-            <h2
-                style="margin: 20px 0 10px 0; font-size: clamp(22px, 3.2vw, 32px); line-height: clamp(1.2, 1.5vw, 1.5);">
+    
+            <!-- Основной текст -->
+            <h2 style="margin: 20px 0 10px 0; font-size: clamp(22px, 3.2vw, 32px); line-height: clamp(1.2, 1.5vw, 1.5);">
                 Хочете віддалений бізнес без великих вкладень?
             </h2>
             <h2 style="margin: 0; font-size: clamp(22px, 3.2vw, 32px); line-height: clamp(1.2, 1.5vw, 1.5);">
                 Почніть продавати унікальні товари нашого виробництва на західні ринки - вже через 2 тижні!
             </h2>
-
-            <!-- Кнопка "ЗАРЕЄСТРУВАТИСЯ" под текстом -->
+    
+            <!-- Кнопка -->
             <button onclick="openFormModal()" class="subscribeBtn" style="
-        margin-top: 25px;
-        padding: 16px 24px; /* увеличили внутренние отступы */
-        font-size: clamp(14px, 2vw, 20px); /* увеличили размер текста */
-        font-weight: bold;
-        background-color: rgb(244, 192, 30);
-        color: #262525;
-        border: none;
-        border-radius: 0;
-        cursor: pointer;
-        min-width: 160px; /* увеличили минимальную ширину */
-        max-width: 240px; /* увеличили максимальную ширину */
-    ">
+                margin-top: 25px;
+                padding: 16px 24px;
+                font-size: clamp(14px, 2vw, 20px);
+                font-weight: bold;
+                background-color: rgb(244, 192, 30);
+                color: #262525;
+                border: none;
+                border-radius: 0;
+                cursor: pointer;
+                min-width: 160px;
+                max-width: 240px;">
                 ЗАРЕЄСТРУВАТИСЯ
             </button>
-
+    
+            <!-- Дата и время онлайн-зустрічі -->
             <h2 style="margin-top: 15px; font-size: clamp(14px, 1.5vw, 20px); font-weight: normal; color: #ffffff;">
-                Онлайн-зустріч 15 грудня
+                Онлайн-зустріч 18 грудня
             </h2>
-            <ul
-                style="margin-top: 10px; padding-left: 20px; color: #ffffff; font-size: clamp(12px, 1vw, 16px); line-height: 1.5;">
+            <ul style="margin-top: 10px; padding-left: 20px; color: #ffffff; font-size: clamp(12px, 1vw, 16px); line-height: 1.5;">
                 <li>20:30 за Києвом</li>
                 <li>1:30 Торонто</li>
                 <li>10:30 Ванкувер</li>
             </ul>
         </div>
-
+    
         <!-- Правая колонка с изображением -->
         <div
-            style="flex: 1 1 50%; padding: 20px; box-sizing: border-box; display: flex; min-width: 300px; justify-content: center; align-items: flex-start;">
+            style="flex: 1 1 50%; 
+                   min-width: 300px; 
+                   max-width: 600px; 
+                   padding: 20px 10px; 
+                   box-sizing: border-box; 
+                   display: flex; 
+                   justify-content: center; 
+                   align-items: center;">
             <img src="./img/photo1.1.png" alt="Пример изображения"
-                style="width: 95%; height: auto; max-width: 100%; border-radius: 0px;">
+                 style="width: 80%; 
+                        max-width: 100%; 
+                        height: auto; 
+                        border-radius: 20px; 
+                        display: block;
+                        margin: 0 auto; 
+                        transition: all 0.3s ease;">
         </div>
-
+    
     </section>
+    
 
 
 
@@ -368,7 +386,7 @@
         <div style="text-align: center; margin-top: clamp(2px, 0.5vw, 4px); max-width: 600px;">
             <h4
                 style="font-size: clamp(18px, 2.5vw, 22px); color: rgb(217, 217, 217); font-weight: bold; margin-bottom: clamp(4px, 0.5vw, 6px);">
-                Початок 15 грудня
+                Початок 18 грудня
             </h4>
             <ul
                 style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: clamp(1px, 0.3vw, 2px); align-items: center;">
