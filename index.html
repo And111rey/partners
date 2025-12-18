@@ -60,7 +60,7 @@
     
             <!-- Дата и время онлайн-зустрічі -->
             <h2 style="margin-top: 15px; font-size: clamp(14px, 1.5vw, 20px); font-weight: normal; color: #ffffff;">
-                Онлайн-зустріч 18 грудня
+                Онлайн-зустріч 29 грудня
             </h2>
             <ul style="margin-top: 10px; padding-left: 20px; color: #ffffff; font-size: clamp(12px, 1vw, 16px); line-height: 1.5;">
                 <li>20:30 за Києвом</li>
@@ -386,7 +386,7 @@
         <div style="text-align: center; margin-top: clamp(2px, 0.5vw, 4px); max-width: 600px;">
             <h4
                 style="font-size: clamp(18px, 2.5vw, 22px); color: rgb(217, 217, 217); font-weight: bold; margin-bottom: clamp(4px, 0.5vw, 6px);">
-                Початок 18 грудня
+                Початок 29 грудня
             </h4>
             <ul
                 style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: clamp(1px, 0.3vw, 2px); align-items: center;">
@@ -442,152 +442,166 @@
     </section>
 
 
-
-    <!-- Модальное окно с формой SendPulse -->
-    <div id="formModal" style="
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.7);
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    padding:20px;
-    box-sizing:border-box;
-    opacity:0;
-    transition: opacity 0.3s ease;
+<!-- Модальное окно с формой SendPulse -->
+<div id="formModal" style="
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
+z-index:9999;
+padding:20px;
+box-sizing:border-box;
+opacity:0;
+transition: opacity 0.3s ease;
 ">
-        <div id="formModalContent" style="
-        background:#1d1c1c;
-        width:100%;
-        max-width:420px;
-        padding:clamp(16px, 4vw, 28px);
-        border-radius:16px;
-        box-shadow:0 4px 30px rgba(0,0,0,0.4);
-        box-sizing:border-box;
-        transform:scale(0.9);
-        transition: transform 0.3s ease;
-        color: #fff;
-        font-family: Arial, sans-serif;
-    ">
-            <h2 style="
-            margin-bottom: clamp(12px, 2vw, 20px);
-            font-size: clamp(20px, 4vw, 26px);
-            text-align: center;
-        ">
-                Реєстрація на зустріч
-            </h2>
+  <div id="formModalContent" style="
+  background:#1d1c1c;
+  width:100%;
+  max-width:420px;
+  padding:clamp(16px, 4vw, 28px);
+  border-radius:16px;
+  box-shadow:0 4px 30px rgba(0,0,0,0.4);
+  box-sizing:border-box;
+  transform:scale(0.9);
+  transition: transform 0.3s ease;
+  color:#fff;
+  font-family:Arial, sans-serif;
+">
+    <h2 style="
+    margin-bottom:clamp(12px, 2vw, 20px);
+    font-size:clamp(20px, 4vw, 26px);
+    text-align:center;
+">
+      Реєстрація на зустріч
+    </h2>
 
-            <!-- Форма SendPulse -->
-            <form id="sendpulseForm"
-                action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4OTU5ODYxLCJhZGRyZXNzX2Jvb2tfaWQiOjgyNzA1LCJsYW5nIjoicnUifQ=="
-                method="post">
+    <!-- Форма SendPulse -->
+    <form id="sendpulseForm"
+      action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4OTU5ODYxLCJhZGRyZXNzX2Jvb2tfaWQiOjgyNzA1LCJsYW5nIjoicnUifQ=="
+      method="post">
 
-                <label style="display:block; margin-bottom:6px;">Ім’я</label>
-                <input type="text" name="name" style="
-                width:100%;
-                margin-bottom:14px;
-                padding:10px;
-                border-radius:8px;
-                border:1px solid #555;
-                font-size:16px;
-                background:#2a2929;
-                color:#fff;
-                box-sizing:border-box;
-            ">
+      <!-- UTM hidden fields -->
+      <input type="hidden" name="utm_source">
+      <input type="hidden" name="utm_medium">
+      <input type="hidden" name="utm_campaign">
+      <input type="hidden" name="utm_content">
+      <input type="hidden" name="utm_term">
 
-                <label style="display:block; margin-bottom:6px;">Email</label>
-                <input type="email" required name="email" style="
-                width:100%;
-                margin-bottom:14px;
-                padding:10px;
-                border-radius:8px;
-                border:1px solid #555;
-                font-size:16px;
-                background:#2a2929;
-                color:#fff;
-                box-sizing:border-box;
-            ">
+      <label style="display:block;margin-bottom:6px;">Ім’я</label>
+      <input type="text" name="name" style="
+      width:100%;
+      margin-bottom:14px;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #555;
+      font-size:16px;
+      background:#2a2929;
+      color:#fff;
+      box-sizing:border-box;
+">
 
-                <input type="hidden" name="sender" value="bWFuYWdlckBsaWdodGJveGZvcnlvdS5zaG9w">
+      <label style="display:block;margin-bottom:6px;">Email</label>
+      <input type="email" required name="email" style="
+      width:100%;
+      margin-bottom:14px;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #555;
+      font-size:16px;
+      background:#2a2929;
+      color:#fff;
+      box-sizing:border-box;
+">
 
-                <button type="submit" style="
-                width:100%;
-                padding:12px;
-                margin-top:10px;
-                background: gold;
-                font-weight:bold;
-                border:none;
-                border-radius:8px;
-                cursor:pointer;
-                font-size:16px;
-            ">Підписатися</button>
-            </form>
+      <input type="hidden" name="sender" value="bWFuYWdlckBsaWdodGJveGZvcnlvdS5zaG9w">
 
-            <button onclick="closeFormModal()" style="
-            width:100%;
-            margin-top:10px;
-            background:#111;
-            color:#fff;
-            padding:12px;
-            border:none;
-            border-radius:8px;
-            font-size:16px;
-            cursor:pointer;
-        ">Закрити</button>
-        </div>
-    </div>
+      <button type="submit" style="
+      width:100%;
+      padding:12px;
+      margin-top:10px;
+      background:gold;
+      font-weight:bold;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:16px;
+">
+        Підписатися
+      </button>
+    </form>
 
-    <script>
-        function openFormModal() {
-            const modal = document.getElementById('formModal');
-            const content = document.getElementById('formModalContent');
+    <button onclick="closeFormModal()" style="
+    width:100%;
+    margin-top:10px;
+    background:#111;
+    color:#fff;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+">
+      Закрити
+    </button>
+  </div>
+</div>
 
-            modal.style.display = 'flex';
+<script>
+/* Модалка */
+function openFormModal() {
+  const modal = document.getElementById('formModal');
+  const content = document.getElementById('formModalContent');
+  modal.style.display = 'flex';
+  setTimeout(() => {
+    modal.style.opacity = '1';
+    content.style.transform = 'scale(1)';
+  }, 10);
+}
 
-            setTimeout(() => {
-                modal.style.opacity = '1';
-                content.style.transform = 'scale(1)';
-            }, 10);
-        }
+function closeFormModal() {
+  const modal = document.getElementById('formModal');
+  const content = document.getElementById('formModalContent');
+  modal.style.opacity = '0';
+  content.style.transform = 'scale(0.9)';
+  setTimeout(() => modal.style.display = 'none', 300);
+}
 
-        function closeFormModal() {
-            const modal = document.getElementById('formModal');
-            const content = document.getElementById('formModalContent');
+/* UTM автозаполнение + fallback */
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
 
-            modal.style.opacity = '0';
-            content.style.transform = 'scale(0.9)';
+  utms.forEach(utm => {
+    const input = document.querySelector('input[name="'+utm+'"]');
+    if (input) input.value = params.get(utm) || 'direct';
+  });
+})();
 
-            setTimeout(() => modal.style.display = 'none', 300);
-        }
+/* Отправка формы через fetch с редиректом */
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('sendpulseForm');
 
-        // ===== Обработчик формы SendPulse с редиректом =====
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('sendpulseForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-            form.addEventListener('submit', function (e) {
-                e.preventDefault(); // Отменяем стандартную отправку
+    const formData = new FormData(form);
+    const params = new URLSearchParams(formData).toString();
 
-                const xhr = new XMLHttpRequest();
-                xhr.open(form.method, form.action);
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-                const formData = new FormData(form);
-                const params = new URLSearchParams(formData).toString();
-
-                xhr.onload = function () {
-                    if (xhr.status === 200 || xhr.status === 201) {
-                        // Редирект на страницу "Спасибо"
-                        window.location.href = "./thank-you.html";
-                    } else {
-                        alert('Щось пішло не так, спробуйте ще раз.');
-                    }
-                };
-
-                xhr.send(params);
-            });
-        });
-    </script>
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params
+    })
+    .then(response => {
+      if (response.ok) window.location.href = './thank-you.html';
+      else alert('Щось пішло не так, спробуйте ще раз.');
+    })
+    .catch(() => alert('Помилка з’єднання, спробуйте пізніше.'));
+  });
+});
+</script>
 </body>
 
 </html>
