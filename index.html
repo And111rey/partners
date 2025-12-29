@@ -407,6 +407,7 @@
 <!-- ===================== Модальное окно ===================== -->
 <!-- FORM MODAL -->
 <!-- FORM MODAL -->
+<!-- FORM MODAL -->
 <div id="formModal" style="
     display:none;
     position:fixed;
@@ -463,7 +464,7 @@
              class="sp-form sp-form-regular">
 
             <div class="sp-form-fields-wrapper">
-                <form novalidate class="sp-element-container">
+                <form novalidate class="sp-element-container" data-redirect="thank-you.html">
 
                     <!-- EMAIL -->
                     <div class="sp-field" style="margin-bottom: 14px;">
@@ -482,7 +483,7 @@
                                style="width:100%;padding:12px;border-radius:8px;border:1px solid #aaa;">
                     </div>
 
-                    <!-- 🔒 UTM HIDDEN FIELDS -->
+                    <!-- UTM HIDDEN FIELDS -->
                     <input type="hidden" name="utm_source">
                     <input type="hidden" name="utm_medium">
                     <input type="hidden" name="utm_campaign">
@@ -512,7 +513,6 @@
 
 <script async src="//web.webformscr.com/apps/fc3/build/default-handler.js"></script>
 
-<!-- OPEN/CLOSE MODAL + UTM + REDIRECT -->
 <script>
     // Открытие и закрытие модалки
     function openFormModal() {
@@ -525,7 +525,7 @@
         if(modal) modal.style.display = 'none';
     }
 
-    // Заполнение UTM и редирект через submit
+    // Заполняем UTM из URL
     (function () {
         const params = new URLSearchParams(window.location.search);
         const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
@@ -537,28 +537,14 @@
             }
         });
 
-        // Получаем форму
-        const form = document.querySelector('#sp-form-250745 form');
-
-        if(form){
-            form.addEventListener('submit', function(e){
-                // Убираем дефолтное поведение, чтобы дождаться отправки
-                e.preventDefault();
-
-                // Сначала вызываем обработчик SendPulse
-                if(typeof window.sp !== 'undefined' && sp.forms && sp.forms.submit){
-                    sp.forms.submit(form); // отправляем форму через SendPulse
-                }
-
-                // Делаем редирект после небольшой задержки (0.5с) для гарантии отправки
-                setTimeout(()=>{
-                    closeFormModal(); // закрываем модал
-                    window.location.href = 'thank-you.html';
-                }, 500);
-            });
-        }
+        // Отслеживаем успешную отправку формы
+        document.addEventListener('spFormSubmitSuccess', function () {
+            closeFormModal();               // закрываем модалку
+            window.location.href = 'thank-you.html'; // редирект на thank-you
+        });
     })();
 </script>
+
 
 
   </body>
