@@ -519,35 +519,46 @@
         const modal = document.getElementById('formModal');
         if(modal) modal.style.display = 'flex';
     }
-    
+
     function closeFormModal() {
         const modal = document.getElementById('formModal');
         if(modal) modal.style.display = 'none';
     }
-    
-    // Заполнение UTM и редирект
+
+    // Заполнение UTM и редирект через submit
     (function () {
         const params = new URLSearchParams(window.location.search);
         const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-    
+
         utms.forEach(utm => {
             const input = document.querySelector(`input[name="${utm}"]`);
             if (input && params.get(utm)) {
                 input.value = params.get(utm);
             }
         });
-    
-        // Событие успешной отправки формы
-        document.addEventListener('spFormSubmitSuccess', function () {
-            // Закрываем модальное окно полностью
-            const modal = document.getElementById('formModal');
-            if(modal) modal.style.display = 'none';
-    
-            // Редирект на thank-you.html
-            window.location.href = 'thank-you.html';
-        });
+
+        // Получаем форму
+        const form = document.querySelector('#sp-form-250745 form');
+
+        if(form){
+            form.addEventListener('submit', function(e){
+                // Убираем дефолтное поведение, чтобы дождаться отправки
+                e.preventDefault();
+
+                // Сначала вызываем обработчик SendPulse
+                if(typeof window.sp !== 'undefined' && sp.forms && sp.forms.submit){
+                    sp.forms.submit(form); // отправляем форму через SendPulse
+                }
+
+                // Делаем редирект после небольшой задержки (0.5с) для гарантии отправки
+                setTimeout(()=>{
+                    closeFormModal(); // закрываем модал
+                    window.location.href = 'thank-you.html';
+                }, 500);
+            });
+        }
     })();
-    </script>
+</script>
 
 
   </body>
