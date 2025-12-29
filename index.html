@@ -2,107 +2,59 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POD Partners</title>
-    
-    <!-- Google tag (gtag.js) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POD Partners</title>
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY1521CNHJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-GY1521CNHJ');
 </script>
+
 </head>
 
-<body
-    style="margin: 0; padding: 0; background-color: #212121; color: #ffffff; font-family: Arial, sans-serif; min-height: 100vh;">
+<body style="margin:0; padding:0; background:#212121; color:#fff; font-family:Arial, sans-serif; min-height:100vh;">
 
-    <!-- 1111111111 -->
-    <section style="display: flex; flex-wrap: wrap; width: 100%; justify-content: center;">
+<!-- ===================== 1-й блок ===================== -->
+<section style="display:flex; flex-wrap:wrap; width:100%; justify-content:center;">
+  <div style="flex:1 1 50%; min-width:300px; max-width:600px; padding:40px 20px; box-sizing:border-box; display:flex; flex-direction:column; justify-content:center;"> 
+    <div style="display:flex; align-items:center; margin-bottom:12px;">
+      <img src="./img/logo.png" alt="Логотип" style="width:6%; max-width:30px; height:auto; margin-right:6px;">
+      <div style="display:flex; flex-direction:column; line-height:1; margin-top:-1px;">
+        <span style="font-size:11px;">POD</span>
+        <span style="font-size:11px;">Partners</span>
+      </div>
+    </div>
 
-        <!-- Левая колонка с логотипом -->
-        <div
-            style="flex: 1 1 50%; 
-                   min-width: 300px; 
-                   max-width: 600px; 
-                   padding: 40px 20px; 
-                   box-sizing: border-box; 
-                   display: flex; 
-                   flex-direction: column; 
-                   justify-content: center;"> 
-    
-            <!-- Верхний ряд: логотип и два ряда текста -->
-            <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                <img src="./img/logo.png" alt="Логотип"
-                     style="width: 6%; max-width: 30px; height: auto; margin-right: 6px;">
-                <div style="display: flex; flex-direction: column; line-height: 1; margin-top: -1px;">
-                    <span style="font-size: 11px;">POD</span>
-                    <span style="font-size: 11px;">Partners</span>
-                </div>
-            </div>
-    
-            <!-- Основной текст -->
-            <h2 style="margin: 20px 0 10px 0; font-size: clamp(30px, 3.2vw, 42px);; line-height: clamp(1.2, 1.5vw, 1.5);">
-                Хочете віддалений бізнес без великих вкладень?
-            </h2>
-            <h2 style="margin: 0; font-size: clamp(20px, 3.2vw, 28px); line-height: clamp(1.2, 1.5vw, 1.5);">
-                Почніть продавати унікальні товари нашого виробництва на західні ринки - вже через 2 тижні!
-            </h2>
-    
-            <!-- Кнопка -->
-            <button onclick="openFormModal()" class="subscribeBtn" style="
-                margin-top: 25px;
-                padding: 16px 24px;
-                font-size: clamp(14px, 2vw, 20px);
-                font-weight: bold;
-                background-color: rgb(244, 192, 30);
-                color: #262525;
-                border: none;
-                border-radius: 0;
-                cursor: pointer;
-                min-width: 160px;
-                max-width: 240px;">
-                ЗАРЕЄСТРУВАТИСЯ
-            </button>
-    
-            <!-- Дата и время онлайн-зустрічі -->
-            <h2 style="margin-top: 15px; font-size: clamp(14px, 1.5vw, 20px); font-weight: normal; color: #ffffff;">
-                Онлайн-зустріч 29 грудня
-            </h2>
-            <ul style="margin-top: 10px; padding-left: 20px; color: #ffffff; font-size: clamp(12px, 1vw, 16px); line-height: 1.5;">
-                <li>20:30 за Києвом</li>
-                <li>1:30 Торонто</li>
-                <li>10:30 Ванкувер</li>
-            </ul>
-        </div>
-    
-        <!-- Правая колонка с изображением -->
-        <div
-            style="flex: 1 1 50%; 
-                   min-width: 300px; 
-                   max-width: 600px; 
-                   padding: 20px 10px; 
-                   box-sizing: border-box; 
-                   display: flex; 
-                   justify-content: center; 
-                   align-items: center;">
-            <img src="./img/photo1.1.png" alt="Пример изображения"
-                 style="width: 80%; 
-                        max-width: 100%; 
-                        height: auto; 
-                        border-radius: 20px; 
-                        display: block;
-                        margin: 0 auto; 
-                        transition: all 0.3s ease;">
-        </div>
-    
-    </section>
-    
+    <h2 style="margin:20px 0 10px 0; font-size:clamp(30px,3.2vw,42px); line-height:clamp(1.2,1.5vw,1.5);">
+      Хочете віддалений бізнес без великих вкладень?
+    </h2>
+    <h2 style="margin:0; font-size:clamp(20px,3.2vw,28px); line-height:clamp(1.2,1.5vw,1.5);">
+      Почніть продавати унікальні товари нашого виробництва на західні ринки - вже через 2 тижні!
+    </h2>
 
+    <button onclick="openFormModal()" style="margin-top:25px; padding:16px 24px; font-size:clamp(14px,2vw,20px); font-weight:bold; background:rgb(244,192,30); color:#262525; border:none; cursor:pointer; min-width:160px; max-width:240px;">
+      ЗАРЕЄСТРУВАТИСЯ
+    </button>
 
+    <h2 style="margin-top:15px; font-size:clamp(14px,1.5vw,20px); font-weight:normal; color:#fff;">
+      Онлайн-зустріч 29 грудня
+    </h2>
+    <ul style="margin-top:10px; padding-left:20px; color:#fff; font-size:clamp(12px,1vw,16px); line-height:1.5;">
+      <li>20:30 за Києвом</li>
+      <li>1:30 Торонто</li>
+      <li>10:30 Ванкувер</li>
+    </ul>
+  </div>
+
+  <div style="flex:1 1 50%; min-width:300px; max-width:600px; padding:20px 10px; box-sizing:border-box; display:flex; justify-content:center; align-items:center;">
+    <img src="./img/photo1.1.png" alt="Пример изображения" style="width:80%; max-width:100%; height:auto; border-radius:20px;">
+  </div>
+</section>
 
 
 
@@ -452,166 +404,83 @@
     </section>
 
 
-<!-- Модальное окно с формой SendPulse -->
-<div id="formModal" style="
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.7);
-justify-content:center;
-align-items:center;
-z-index:9999;
-padding:20px;
-box-sizing:border-box;
-opacity:0;
-transition: opacity 0.3s ease;
-">
-  <div id="formModalContent" style="
-  background:#1d1c1c;
-  width:100%;
-  max-width:420px;
-  padding:clamp(16px, 4vw, 28px);
-  border-radius:16px;
-  box-shadow:0 4px 30px rgba(0,0,0,0.4);
-  box-sizing:border-box;
-  transform:scale(0.9);
-  transition: transform 0.3s ease;
-  color:#fff;
-  font-family:Arial, sans-serif;
-">
-    <h2 style="
-    margin-bottom:clamp(12px, 2vw, 20px);
-    font-size:clamp(20px, 4vw, 26px);
-    text-align:center;
-">
-      Реєстрація на зустріч
-    </h2>
-
-    <!-- Форма SendPulse -->
-    <form id="sendpulseForm"
-      action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4OTU5ODYxLCJhZGRyZXNzX2Jvb2tfaWQiOjgyNzA1LCJsYW5nIjoicnUifQ=="
-      method="post">
-
-      <!-- UTM hidden fields -->
-      <input type="hidden" name="utm_source">
-      <input type="hidden" name="utm_medium">
-      <input type="hidden" name="utm_campaign">
-      <input type="hidden" name="utm_content">
-      <input type="hidden" name="utm_term">
-
-      <label style="display:block;margin-bottom:6px;">Ім’я</label>
-      <input type="text" name="name" style="
-      width:100%;
-      margin-bottom:14px;
-      padding:10px;
-      border-radius:8px;
-      border:1px solid #555;
-      font-size:16px;
-      background:#2a2929;
-      color:#fff;
-      box-sizing:border-box;
-">
-
-      <label style="display:block;margin-bottom:6px;">Email</label>
-      <input type="email" required name="email" style="
-      width:100%;
-      margin-bottom:14px;
-      padding:10px;
-      border-radius:8px;
-      border:1px solid #555;
-      font-size:16px;
-      background:#2a2929;
-      color:#fff;
-      box-sizing:border-box;
-">
-
-      <input type="hidden" name="sender" value="bWFuYWdlckBsaWdodGJveGZvcnlvdS5zaG9w">
-
-      <button type="submit" style="
-      width:100%;
-      padding:12px;
-      margin-top:10px;
-      background:gold;
-      font-weight:bold;
-      border:none;
-      border-radius:8px;
-      cursor:pointer;
-      font-size:16px;
-">
-        Підписатися
+<!-- ===================== Модальное окно ===================== -->
+<div id="formModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:9999; padding:20px; box-sizing:border-box; opacity:0; transition:opacity 0.3s ease;">
+    <div id="formModalContent" style="background:#1d1c1c; width:100%; max-width:420px; padding:clamp(16px,4vw,28px); border-radius:16px; box-shadow:0 4px 30px rgba(0,0,0,0.4); box-sizing:border-box; transform:scale(0.9); transition:transform 0.3s ease; color:#fff; font-family:Arial,sans-serif;">
+      <h2 style="margin-bottom:clamp(12px,2vw,20px); font-size:clamp(20px,4vw,26px); text-align:center;">
+        Реєстрація на зустріч
+      </h2>
+  
+      <!-- Кастомная форма с UTM -->
+      <div id="customSendPulseForm"></div>
+  
+      <button onclick="closeFormModal()" style="width:100%; margin-top:10px; background:#111; color:#fff; padding:12px; border:none; border-radius:8px; font-size:16px; cursor:pointer;">
+        Закрити
       </button>
-    </form>
-
-    <button onclick="closeFormModal()" style="
-    width:100%;
-    margin-top:10px;
-    background:#111;
-    color:#fff;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    font-size:16px;
-    cursor:pointer;
-">
-      Закрити
-    </button>
+    </div>
   </div>
-</div>
-
-<script>
-/* Модалка */
-function openFormModal() {
-  const modal = document.getElementById('formModal');
-  const content = document.getElementById('formModalContent');
-  modal.style.display = 'flex';
-  setTimeout(() => {
-    modal.style.opacity = '1';
-    content.style.transform = 'scale(1)';
-  }, 10);
-}
-
-function closeFormModal() {
-  const modal = document.getElementById('formModal');
-  const content = document.getElementById('formModalContent');
-  modal.style.opacity = '0';
-  content.style.transform = 'scale(0.9)';
-  setTimeout(() => modal.style.display = 'none', 300);
-}
-
-/* UTM автозаполнение + fallback */
-(function () {
+  
+  <script>
+  /* Открытие/закрытие модалки */
+  function openFormModal() {
+    const modal = document.getElementById('formModal');
+    const content = document.getElementById('formModalContent');
+    modal.style.display='flex';
+    setTimeout(()=>{ modal.style.opacity='1'; content.style.transform='scale(1)'; }, 10);
+  }
+  function closeFormModal() {
+    const modal = document.getElementById('formModal');
+    const content = document.getElementById('formModalContent');
+    modal.style.opacity='0';
+    content.style.transform='scale(0.9)';
+    setTimeout(()=>modal.style.display='none', 300);
+  }
+  
+  /* Заполняем UTM */
   const params = new URLSearchParams(window.location.search);
   const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-
-  utms.forEach(utm => {
-    const input = document.querySelector('input[name="'+utm+'"]');
-    if (input) input.value = params.get(utm) || 'direct';
-  });
-})();
-
-/* Отправка формы через fetch с редиректом */
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('sendpulseForm');
-
-  form.addEventListener('submit', function (e) {
+  const utmValues = {};
+  utms.forEach(utm => utmValues[utm] = params.get(utm) || 'direct');
+  
+  /* Создаем кастомную форму SendPulse */
+  const formHtml = `
+  <form id="sendpulseFormCustom">
+    <label>Ім’я</label>
+    <input type="text" name="name" required style="width:100%; padding:10px; margin-bottom:10px;"/>
+    <label>Email</label>
+    <input type="email" name="email" required style="width:100%; padding:10px; margin-bottom:10px;"/>
+    <input type="hidden" name="utm_source" value="${utmValues.utm_source}">
+    <input type="hidden" name="utm_medium" value="${utmValues.utm_medium}">
+    <input type="hidden" name="utm_campaign" value="${utmValues.utm_campaign}">
+    <input type="hidden" name="utm_content" value="${utmValues.utm_content}">
+    <input type="hidden" name="utm_term" value="${utmValues.utm_term}">
+    <button type="submit" style="width:100%; padding:12px; background:gold; font-weight:bold; border:none; border-radius:8px; cursor:pointer; font-size:16px;">Підписатися</button>
+  </form>
+  `;
+  document.getElementById('customSendPulseForm').innerHTML = formHtml;
+  
+  /* Подключаем скрипт SendPulse для Double Opt-in */
+  const spScript = document.createElement('script');
+  spScript.src = '//web.webformscr.com/apps/fc3/build/loader.js';
+  spScript.async = true;
+  spScript.dataset.spFormId = '6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b';
+  document.body.appendChild(spScript);
+  
+  /* Сабмит кастомной формы через SendPulse API */
+  document.getElementById('sendpulseFormCustom').addEventListener('submit', function(e){
     e.preventDefault();
-
-    const formData = new FormData(form);
-    const params = new URLSearchParams(formData).toString();
-
-    fetch(form.action, {
+    const data = new FormData(this);
+    fetch(`https://web.webformscr.com/api/v1/forms/${spScript.dataset.spFormId}/subscribe`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: params
+      body: data
     })
-    .then(response => {
-      if (response.ok) window.location.href = './thank-you.html';
-      else alert('Щось пішло не так, спробуйте ще раз.');
+    .then(res=>{
+      if(res.ok) window.location.href='./thank-you.html';
+      else alert('Помилка відправки форми, спробуйте пізніше.');
     })
-    .catch(() => alert('Помилка з’єднання, спробуйте пізніше.'));
+    .catch(()=>alert('Помилка з’єднання'));
   });
-});
-</script>
-</body>
-
-</html>
+  </script>
+  
+  </body>
+  </html>
