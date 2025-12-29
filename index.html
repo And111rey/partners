@@ -538,25 +538,26 @@
         });
     })();
 
-    // Универсальная отправка формы + редирект
     const form = document.getElementById('mySendPulseForm');
+
     if(form){
+        // Событие успешной отправки SendPulse
+        document.addEventListener('spFormSubmitSuccess', function () {
+            closeFormModal();
+            window.location.href = 'https://and111rey.github.io/partners/thank-you.html';
+        });
+
+        // На всякий случай, принудительно редиректим при любом submit
         form.addEventListener('submit', function(e){
-            e.preventDefault();
-
-            // Отправка через SendPulse, если скрипт доступен
-            if(typeof sp !== 'undefined' && sp.forms && sp.forms.submit){
-                sp.forms.submit(form);
-            }
-
-            // Редирект в любом случае через 1 сек
+            // Ждём 0.5 секунды, чтобы SendPulse успел отправить форму
             setTimeout(()=>{
                 closeFormModal();
                 window.location.href = 'https://and111rey.github.io/partners/thank-you.html';
-            }, 1000); // 1 сек задержка, чтобы отправка прошла
+            }, 500);
         });
     }
 </script>
+
 
 
 
