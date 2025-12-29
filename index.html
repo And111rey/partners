@@ -405,92 +405,117 @@
 
 
 <!-- ===================== Модальное окно ===================== -->
-<div id="formModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:9999; padding:20px; box-sizing:border-box; opacity:0; transition:opacity 0.3s ease;">
-    <div id="formModalContent" style="background:#1d1c1c; width:100%; max-width:420px; padding:clamp(16px,4vw,28px); border-radius:16px; box-shadow:0 4px 30px rgba(0,0,0,0.4); box-sizing:border-box; transform:scale(0.9); transition:transform 0.3s ease; color:#fff; font-family:Arial,sans-serif;">
-      <h2 style="margin-bottom:clamp(12px,2vw,20px); font-size:clamp(20px,4vw,26px); text-align:center;">
-        Реєстрація на зустріч
-      </h2>
-  
-      <!-- Кастомная форма с UTM -->
-      <div id="customSendPulseForm"></div>
-  
-      <button onclick="closeFormModal()" style="width:100%; margin-top:10px; background:#111; color:#fff; padding:12px; border:none; border-radius:8px; font-size:16px; cursor:pointer;">
-        Закрити
-      </button>
+
+    <!-- Модальное окно с формой SendPulse -->
+    <div id="formModal" style="
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.7);
+        justify-content:center;
+        align-items:center;
+        z-index:9999;
+        padding:20px;
+        box-sizing:border-box;
+        opacity:0;
+        transition: opacity 0.3s ease;
+    ">
+        <div id="formModalContent" style="
+            background:#1d1c1c;
+            width:100%;
+            max-width:420px;
+            padding:28px;
+            border-radius:16px;
+            box-shadow:0 4px 30px rgba(0,0,0,0.4);
+            box-sizing:border-box;
+            transform:scale(0.9);
+            transition: transform 0.3s ease;
+            color:#fff;
+            font-family:Arial, sans-serif;
+        ">
+            <h2 style="text-align:center; font-size: 24px; margin-bottom:20px;">Реєстрація на зустріч</h2>
+
+            <!-- Форма SendPulse -->
+            <form id="sendpulseForm"
+                action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4OTU5ODYxLCJhZGRyZXNzX2Jvb2tfaWQiOjgyNzA1LCJsYW5nIjoicnUifQ=="
+                method="post">
+
+                <!-- UTM hidden fields -->
+                <input type="hidden" name="utm_source">
+                <input type="hidden" name="utm_medium">
+                <input type="hidden" name="utm_campaign">
+                <input type="hidden" name="utm_content">
+                <input type="hidden" name="utm_term">
+
+                <label>Ім’я</label>
+                <input type="text" name="name" style="width:100%; margin-bottom:14px; padding:10px; border-radius:8px; border:1px solid #555; background:#2a2929; color:#fff;" required>
+
+                <label>Email</label>
+                <input type="email" name="email" style="width:100%; margin-bottom:14px; padding:10px; border-radius:8px; border:1px solid #555; background:#2a2929; color:#fff;" required>
+
+                <input type="hidden" name="sender" value="bWFuYWdlckBsaWdodGJveGZvcnlvdS5zaG9w">
+
+                <button type="submit" style="width:100%; padding:12px; background:gold; font-weight:bold; border:none; border-radius:8px; cursor:pointer; font-size:16px;">
+                    Підписатися
+                </button>
+            </form>
+
+            <button onclick="closeFormModal()" style="width:100%; margin-top:10px; background:#111; color:#fff; padding:12px; border:none; border-radius:8px; font-size:16px; cursor:pointer;">
+                Закрити
+            </button>
+        </div>
     </div>
-  </div>
-  
-  <script>
-  /* Открытие/закрытие модалки */
-  function openFormModal() {
-    const modal = document.getElementById('formModal');
-    const content = document.getElementById('formModalContent');
-    modal.style.display='flex';
-    setTimeout(()=>{ modal.style.opacity='1'; content.style.transform='scale(1)'; }, 10);
-  }
-  function closeFormModal() {
-    const modal = document.getElementById('formModal');
-    const content = document.getElementById('formModalContent');
-    modal.style.opacity='0';
-    content.style.transform='scale(0.9)';
-    setTimeout(()=>modal.style.display='none', 300);
-  }
-  
-  /* Заполняем UTM */
-  const params = new URLSearchParams(window.location.search);
-  const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-  const utmValues = {};
-  utms.forEach(utm => utmValues[utm] = params.get(utm) || 'direct');
-  
-  /* Создаем кастомную форму SendPulse */
-  const formHtml = `
-  <form id="sendpulseFormCustom" data-sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b">
-    <label>Ім’я</label>
-    <input type="text" name="name" required style="width:100%; padding:10px; margin-bottom:10px;"/>
-    <label>Email</label>
-    <input type="email" name="email" required style="width:100%; padding:10px; margin-bottom:10px;"/>
-    <input type="hidden" name="utm_source" value="${utmValues.utm_source}">
-    <input type="hidden" name="utm_medium" value="${utmValues.utm_medium}">
-    <input type="hidden" name="utm_campaign" value="${utmValues.utm_campaign}">
-    <input type="hidden" name="utm_content" value="${utmValues.utm_content}">
-    <input type="hidden" name="utm_term" value="${utmValues.utm_term}">
-    <button type="submit" style="width:100%; padding:12px; background:gold; font-weight:bold; border:none; border-radius:8px; cursor:pointer; font-size:16px;">Підписатися</button>
-  </form>
-  `;
-  document.getElementById('customSendPulseForm').innerHTML = formHtml;
-  
-  /* Подключаем SendPulse Loader */
-  (function(){
-    const sp = document.createElement('script');
-    sp.src = "https://web.webformscr.com/apps/fc3/build/loader.js";
-    sp.async = true;
-    sp.setAttribute('sp-form-id', '6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
-    document.body.appendChild(sp);
-  })();
-  
-  /* Сабмит кастомной формы через правильный SendPulse API */
-  document.getElementById('sendpulseFormCustom').addEventListener('submit', function(e){
-    e.preventDefault();
-    const form = this;
-    const formData = new FormData(form);
-    const formId = form.dataset.spFormId;
-  
-    fetch(`https://api.web.webformscr.com/v1/forms/subscribe/${formId}`, {
-      method: 'POST',
-      body: formData
-    })
-    .then(res=>{
-      if(res.ok){
-        alert("Вам на email відправлено підтвердження (Double Opt-in).");
-        window.location.href='./thank-you.html';
-      } else {
-        alert('Помилка відправки форми, спробуйте пізніше.');
-      }
-    })
-    .catch(()=>alert('Помилка з’єднання'));
-  });
-  </script>
-  
+
+    <script>
+        // Открытие/закрытие модалки
+        function openFormModal() {
+            const modal = document.getElementById('formModal');
+            const content = document.getElementById('formModalContent');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.style.opacity = '1';
+                content.style.transform = 'scale(1)';
+            }, 10);
+        }
+
+        function closeFormModal() {
+            const modal = document.getElementById('formModal');
+            const content = document.getElementById('formModalContent');
+            modal.style.opacity = '0';
+            content.style.transform = 'scale(0.9)';
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+
+        // Автозаполнение UTM
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+            utms.forEach(utm => {
+                const input = document.querySelector('input[name="'+utm+'"]');
+                if (input) input.value = params.get(utm) || 'direct';
+            });
+        })();
+
+        // Отправка формы через fetch
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('sendpulseForm');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const params = new URLSearchParams(formData).toString();
+                fetch(form.action, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: params
+                })
+                .then(response => {
+                    if (response.ok) window.location.href = './thank-you.html';
+                    else alert('Щось пішло не так, спробуйте ще раз.');
+                })
+                .catch(() => alert('Помилка з’єднання, спробуйте пізніше.'));
+            });
+        });
+    </script>
   
   </body>
   </html>
