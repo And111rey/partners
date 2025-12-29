@@ -405,117 +405,144 @@
 
 
 <!-- ===================== Модальное окно ===================== -->
+<!-- FORM MODAL -->
+<!-- FORM MODAL -->
+<div id="formModal" style="
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    padding: clamp(16px, 4vw, 32px);
+    box-sizing:border-box;
+">
 
-    <!-- Модальное окно с формой SendPulse -->
-    <div id="formModal" style="
-        display:none;
-        position:fixed;
-        inset:0;
-        background:rgba(0,0,0,0.7);
-        justify-content:center;
-        align-items:center;
-        z-index:9999;
-        padding:20px;
-        box-sizing:border-box;
-        opacity:0;
-        transition: opacity 0.3s ease;
+    <div style="
+        background-color: rgb(217, 217, 217);
+        width: 100%;
+        max-width: clamp(320px, 40vw, 420px);
+        border-radius: clamp(10px, 2vw, 16px);
+        padding: clamp(20px, 5vw, 40px);
+        position: relative;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        box-sizing: border-box;
     ">
-        <div id="formModalContent" style="
-            background:#1d1c1c;
-            width:100%;
-            max-width:420px;
-            padding:28px;
-            border-radius:16px;
-            box-shadow:0 4px 30px rgba(0,0,0,0.4);
-            box-sizing:border-box;
-            transform:scale(0.9);
-            transition: transform 0.3s ease;
-            color:#fff;
-            font-family:Arial, sans-serif;
-        ">
-            <h2 style="text-align:center; font-size: 24px; margin-bottom:20px;">Реєстрація на зустріч</h2>
 
-            <!-- Форма SendPulse -->
-            <form id="sendpulseForm"
-                action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4OTU5ODYxLCJhZGRyZXNzX2Jvb2tfaWQiOjgyNzA1LCJsYW5nIjoicnUifQ=="
-                method="post">
+        <button onclick="closeFormModal()" style="
+            position:absolute;
+            top: clamp(10px, 2vw, 16px);
+            right: clamp(10px, 2vw, 16px);
+            background:none;
+            border:none;
+            font-size: clamp(22px, 3vw, 26px);
+            cursor:pointer;
+            color:#313131;
+        ">×</button>
 
-                <!-- UTM hidden fields -->
-                <input type="hidden" name="utm_source">
-                <input type="hidden" name="utm_medium">
-                <input type="hidden" name="utm_campaign">
-                <input type="hidden" name="utm_content">
-                <input type="hidden" name="utm_term">
+        <h2 style="
+            font-size: clamp(22px, 3vw, 28px);
+            color: #313131;
+            font-weight: bold;
+            margin: 0 0 6px 0;
+        ">ЗАЛИШАЙ ЗАЯВКУ</h2>
 
-                <label>Ім’я</label>
-                <input type="text" name="name" style="width:100%; margin-bottom:14px; padding:10px; border-radius:8px; border:1px solid #555; background:#2a2929; color:#fff;" required>
+        <span style="
+            font-size: clamp(14px, 1.5vw, 16px);
+            color: #313131;
+            display: block;
+            margin-bottom: 20px;
+        ">Ми зв’яжемось з тобою</span>
 
-                <label>Email</label>
-                <input type="email" name="email" style="width:100%; margin-bottom:14px; padding:10px; border-radius:8px; border:1px solid #555; background:#2a2929; color:#fff;" required>
+        <!-- SENDPULSE FORM -->
+        <div id="sp-form-250745"
+             sp-id="250745"
+             sp-hash="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b"
+             sp-lang="ua"
+             class="sp-form sp-form-regular">
 
-                <input type="hidden" name="sender" value="bWFuYWdlckBsaWdodGJveGZvcnlvdS5zaG9w">
+            <div class="sp-form-fields-wrapper">
+                <form novalidate class="sp-element-container">
 
-                <button type="submit" style="width:100%; padding:12px; background:gold; font-weight:bold; border:none; border-radius:8px; cursor:pointer; font-size:16px;">
-                    Підписатися
-                </button>
-            </form>
+                    <!-- EMAIL -->
+                    <div class="sp-field" style="margin-bottom: 14px;">
+                        <label style="font-weight:bold;color:#313131;">Email *</label>
+                        <input type="email"
+                               name="sform[email]"
+                               required
+                               style="width:100%;padding:12px;border-radius:8px;border:1px solid #aaa;">
+                    </div>
 
-            <button onclick="closeFormModal()" style="width:100%; margin-top:10px; background:#111; color:#fff; padding:12px; border:none; border-radius:8px; font-size:16px; cursor:pointer;">
-                Закрити
-            </button>
+                    <!-- NAME -->
+                    <div class="sp-field" style="margin-bottom: 18px;">
+                        <label style="font-weight:bold;color:#313131;">Ім'я</label>
+                        <input type="text"
+                               name="sform[0JjQvNGP]"
+                               style="width:100%;padding:12px;border-radius:8px;border:1px solid #aaa;">
+                    </div>
+
+                    <!-- 🔒 UTM HIDDEN FIELDS -->
+                    <input type="hidden" name="utm_source">
+                    <input type="hidden" name="utm_medium">
+                    <input type="hidden" name="utm_campaign">
+                    <input type="hidden" name="utm_content">
+                    <input type="hidden" name="utm_term">
+
+                    <button class="sp-button" style="
+                        width:100%;
+                        padding:14px;
+                        font-size:18px;
+                        font-weight:bold;
+                        background:gold;
+                        border:none;
+                        border-radius:8px;
+                        cursor:pointer;
+                    ">
+                        ЙДУ НА ЗУСТРІЧ!
+                    </button>
+
+                </form>
+            </div>
         </div>
+        <!-- /SENDPULSE FORM -->
+
     </div>
+</div>
 
-    <script>
-        // Открытие/закрытие модалки
-        function openFormModal() {
-            const modal = document.getElementById('formModal');
-            const content = document.getElementById('formModalContent');
-            modal.style.display = 'flex';
-            setTimeout(() => {
-                modal.style.opacity = '1';
-                content.style.transform = 'scale(1)';
-            }, 10);
+<script async src="//web.webformscr.com/apps/fc3/build/default-handler.js"></script>
+
+<!-- OPEN/CLOSE MODAL + UTM + REDIRECT -->
+<script>
+function openFormModal() {
+    const modal = document.getElementById('formModal');
+    if(modal) modal.style.display = 'flex';
+}
+
+function closeFormModal() {
+    const modal = document.getElementById('formModal');
+    if(modal) modal.style.display = 'none';
+}
+
+// Заполняем UTM из URL
+(function () {
+    const params = new URLSearchParams(window.location.search);
+    const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+
+    utms.forEach(utm => {
+        const input = document.querySelector(`input[name="${utm}"]`);
+        if (input && params.get(utm)) {
+            input.value = params.get(utm);
         }
+    });
 
-        function closeFormModal() {
-            const modal = document.getElementById('formModal');
-            const content = document.getElementById('formModalContent');
-            modal.style.opacity = '0';
-            content.style.transform = 'scale(0.9)';
-            setTimeout(() => modal.style.display = 'none', 300);
-        }
+    // Редирект на thank-you.html после успешной отправки
+    document.addEventListener('spFormSubmitSuccess', function () {
+        window.location.href = 'thank-you.html';
+    });
+})();
+</script>
 
-        // Автозаполнение UTM
-        (function () {
-            const params = new URLSearchParams(window.location.search);
-            const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-            utms.forEach(utm => {
-                const input = document.querySelector('input[name="'+utm+'"]');
-                if (input) input.value = params.get(utm) || 'direct';
-            });
-        })();
 
-        // Отправка формы через fetch
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('sendpulseForm');
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData = new FormData(form);
-                const params = new URLSearchParams(formData).toString();
-                fetch(form.action, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: params
-                })
-                .then(response => {
-                    if (response.ok) window.location.href = './thank-you.html';
-                    else alert('Щось пішло не так, спробуйте ще раз.');
-                })
-                .catch(() => alert('Помилка з’єднання, спробуйте пізніше.'));
-            });
-        });
-    </script>
-  
   </body>
   </html>
