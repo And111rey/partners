@@ -514,34 +514,40 @@
 
 <!-- OPEN/CLOSE MODAL + UTM + REDIRECT -->
 <script>
-function openFormModal() {
-    const modal = document.getElementById('formModal');
-    if(modal) modal.style.display = 'flex';
-}
-
-function closeFormModal() {
-    const modal = document.getElementById('formModal');
-    if(modal) modal.style.display = 'none';
-}
-
-// Заполняем UTM из URL
-(function () {
-    const params = new URLSearchParams(window.location.search);
-    const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-
-    utms.forEach(utm => {
-        const input = document.querySelector(`input[name="${utm}"]`);
-        if (input && params.get(utm)) {
-            input.value = params.get(utm);
-        }
-    });
-
-    // Редирект на thank-you.html после успешной отправки
-    document.addEventListener('spFormSubmitSuccess', function () {
-        window.location.href = 'thank-you.html';
-    });
-})();
-</script>
+    // Открытие и закрытие модалки
+    function openFormModal() {
+        const modal = document.getElementById('formModal');
+        if(modal) modal.style.display = 'flex';
+    }
+    
+    function closeFormModal() {
+        const modal = document.getElementById('formModal');
+        if(modal) modal.style.display = 'none';
+    }
+    
+    // Заполнение UTM и редирект
+    (function () {
+        const params = new URLSearchParams(window.location.search);
+        const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    
+        utms.forEach(utm => {
+            const input = document.querySelector(`input[name="${utm}"]`);
+            if (input && params.get(utm)) {
+                input.value = params.get(utm);
+            }
+        });
+    
+        // Событие успешной отправки формы
+        document.addEventListener('spFormSubmitSuccess', function () {
+            // Закрываем модальное окно полностью
+            const modal = document.getElementById('formModal');
+            if(modal) modal.style.display = 'none';
+    
+            // Редирект на thank-you.html
+            window.location.href = 'thank-you.html';
+        });
+    })();
+    </script>
 
 
   </body>
