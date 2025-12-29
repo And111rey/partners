@@ -510,41 +510,35 @@
 <script async src="//web.webformscr.com/apps/fc3/build/default-handler.js"></script>
 
 <script>
-    function openFormModal() {
-        document.getElementById('formModal').style.display = 'flex';
-    }
+function openFormModal() {
+    document.getElementById('formModal').style.display = 'flex';
+}
+function closeFormModal() {
+    document.getElementById('formModal').style.display = 'none';
+}
 
-    function closeFormModal() {
-        document.getElementById('formModal').style.display = 'none';
-    }
+// Заполняем UTM
+(function () {
+    const params = new URLSearchParams(window.location.search);
+    const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    utms.forEach(utm => {
+        const input = document.querySelector(`input[name="${utm}"]`);
+        if(input && params.get(utm)) input.value = params.get(utm);
+    });
+})();
 
-    // Заполняем UTM
-    (function () {
-        const params = new URLSearchParams(window.location.search);
-        const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-        utms.forEach(utm => {
-            const input = document.querySelector(`input[name="${utm}"]`);
-            if(input && params.get(utm)) input.value = params.get(utm);
-        });
-    })();
-
-    const form = document.getElementById('mySendPulseForm');
-
-    if(form){
-        // Редирект после успешной отправки SendPulse
-        document.addEventListener('spFormSubmitSuccess', function () {
+// Получаем форму
+const form = document.getElementById('mySendPulseForm');
+if(form){
+    form.addEventListener('submit', function(e){
+        // Для гарантии отправки формы SendPulse не отменяем событие
+        // Просто делаем редирект через небольшую задержку
+        setTimeout(()=>{
             closeFormModal();
             window.location.href = 'https://and111rey.github.io/partners/thank-you.html';
-        });
-
-        // Принудительный редирект при любом submit (работает всегда)
-        form.addEventListener('submit', function(){
-            setTimeout(() => {
-                closeFormModal();
-                window.location.href = 'https://and111rey.github.io/partners/thank-you.html';
-            }, 1000); // 1 сек задержка
-        });
-    }
+        }, 1000); // 1 сек задержка
+    });
+}
 </script>
 
 
