@@ -464,7 +464,7 @@
              class="sp-form sp-form-regular">
 
             <div class="sp-form-fields-wrapper">
-                <form novalidate class="sp-element-container" data-redirect="thank-you.html">
+                <form id="mySendPulseForm" novalidate class="sp-element-container">
 
                     <!-- EMAIL -->
                     <div class="sp-field" style="margin-bottom: 14px;">
@@ -483,14 +483,14 @@
                                style="width:100%;padding:12px;border-radius:8px;border:1px solid #aaa;">
                     </div>
 
-                    <!-- UTM HIDDEN FIELDS -->
+                    <!-- 🔒 UTM HIDDEN FIELDS -->
                     <input type="hidden" name="utm_source">
                     <input type="hidden" name="utm_medium">
                     <input type="hidden" name="utm_campaign">
                     <input type="hidden" name="utm_content">
                     <input type="hidden" name="utm_term">
 
-                    <button class="sp-button" style="
+                    <button type="submit" class="sp-button" style="
                         width:100%;
                         padding:14px;
                         font-size:18px;
@@ -525,7 +525,7 @@
         if(modal) modal.style.display = 'none';
     }
 
-    // Заполняем UTM из URL
+    // Заполнение UTM
     (function () {
         const params = new URLSearchParams(window.location.search);
         const utms = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
@@ -536,13 +536,26 @@
                 input.value = params.get(utm);
             }
         });
-
-        // Отслеживаем успешную отправку формы
-        document.addEventListener('spFormSubmitSuccess', function () {
-            closeFormModal();               // закрываем модалку
-            window.location.href = 'thank-you.html'; // редирект на thank-you
-        });
     })();
+
+    // Универсальная отправка формы + редирект
+    const form = document.getElementById('mySendPulseForm');
+    if(form){
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            // Отправка через SendPulse, если скрипт доступен
+            if(typeof sp !== 'undefined' && sp.forms && sp.forms.submit){
+                sp.forms.submit(form);
+            }
+
+            // Редирект в любом случае через 1 сек
+            setTimeout(()=>{
+                closeFormModal();
+                window.location.href = 'thank-you.html';
+            }, 1000); // 1 сек задержка, чтобы отправка прошла
+        });
+    }
 </script>
 
 
