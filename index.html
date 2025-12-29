@@ -444,7 +444,7 @@
   
   /* Создаем кастомную форму SendPulse */
   const formHtml = `
-  <form id="sendpulseFormCustom">
+  <form id="sendpulseFormCustom" data-sp-form-id="6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b">
     <label>Ім’я</label>
     <input type="text" name="name" required style="width:100%; padding:10px; margin-bottom:10px;"/>
     <label>Email</label>
@@ -459,28 +459,38 @@
   `;
   document.getElementById('customSendPulseForm').innerHTML = formHtml;
   
-  /* Подключаем скрипт SendPulse для Double Opt-in */
-  const spScript = document.createElement('script');
-  spScript.src = '//web.webformscr.com/apps/fc3/build/loader.js';
-  spScript.async = true;
-  spScript.dataset.spFormId = '6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b';
-  document.body.appendChild(spScript);
+  /* Подключаем SendPulse Loader */
+  (function(){
+    const sp = document.createElement('script');
+    sp.src = "https://web.webformscr.com/apps/fc3/build/loader.js";
+    sp.async = true;
+    sp.setAttribute('sp-form-id', '6c9dc17687c10e9f210d3dfa3d459ca02bd064362a7ea7143cd0230efe058e1b');
+    document.body.appendChild(sp);
+  })();
   
-  /* Сабмит кастомной формы через SendPulse API */
+  /* Сабмит кастомной формы через правильный SendPulse API */
   document.getElementById('sendpulseFormCustom').addEventListener('submit', function(e){
     e.preventDefault();
-    const data = new FormData(this);
-    fetch(`https://web.webformscr.com/api/v1/forms/${spScript.dataset.spFormId}/subscribe`, {
+    const form = this;
+    const formData = new FormData(form);
+    const formId = form.dataset.spFormId;
+  
+    fetch(`https://api.web.webformscr.com/v1/forms/subscribe/${formId}`, {
       method: 'POST',
-      body: data
+      body: formData
     })
     .then(res=>{
-      if(res.ok) window.location.href='./thank-you.html';
-      else alert('Помилка відправки форми, спробуйте пізніше.');
+      if(res.ok){
+        alert("Вам на email відправлено підтвердження (Double Opt-in).");
+        window.location.href='./thank-you.html';
+      } else {
+        alert('Помилка відправки форми, спробуйте пізніше.');
+      }
     })
     .catch(()=>alert('Помилка з’єднання'));
   });
   </script>
+  
   
   </body>
   </html>
